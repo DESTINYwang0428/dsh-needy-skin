@@ -1,0 +1,19 @@
+# 两个小部件如何被 dsh profile 加载
+#
+# 把本文件的内容合并进你的 dsh profile 补丁层：
+#   macOS/Linux: ~/.dsh/profiles/<profile>/cordis.patch.yml
+#   Windows:     %USERPROFILE%\.dsh\profiles\<profile>\cordis.patch.yml
+#
+# 说明：
+#   • `name` 指向 widget 模块文件。相对路径（./xxx.mjs）按 profile 目录解析，
+#     也支持绝对路径（如 /Users/you/dsh-needy-skin/random-hero.mjs）。
+#   • 末尾的 ?v=N 是模块版本号：改动模块文件后必须把它 +1，dsh 才会重新加载模块
+#     （只改 widget 内部读取的 json / 图片不需要动它，刷新页面即可）。
+#   • 两个部件互相独立，可以只装其中一个。
+
+- insert:
+    - id: needy-random-hero
+      name: ./random-hero.mjs?v=1
+
+    - id: needy-random-wallpaper
+      name: ./random-wallpaper.mjs?v=1

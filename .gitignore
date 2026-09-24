@@ -1,0 +1,11 @@
+# 个人图片素材不入库（自己放的图标与壁纸）
+assets/icon.*
+assets/bg/*
+!assets/bg/.gitkeep
+
+# 本地观感配置
+wallpaper.json
+
+# 系统杂物
+.DS_Store
+Thumbs.db
